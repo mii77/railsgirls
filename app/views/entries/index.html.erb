@@ -1,0 +1,16 @@
+<h1 id="website-header">Entries#index</h1>
+<p>Find me in app/views/entries/index.html.erb</p>
+<p>I love wolfs</p>
+<div id="list-of-entries">
+<ul>
+  <% for entry in @entries %> <!-- % oznacza ze to jest cos z codu Rubiego, a nie zwykly html-->
+    <li>
+      <h2><%= entry.title%></h2>
+      <p class="date"><%=entry.date%></p>
+      <p><%=entry.contents%></p>
+      <p><%=link_to("Edit this entry", edit_entry_path(entry))%></p>
+      <p><%=link_to("Show comments", entry_path(entry))%></p>
+      <%# entry %></li> <!--znak = oznacza ze ma to zostac wyswietlone na stronie-->
+  <% end %>
+</ul>
+</div>
